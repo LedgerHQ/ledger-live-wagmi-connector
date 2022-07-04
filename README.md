@@ -1,103 +1,70 @@
-# TSDX User Guide
+<p align="center">
+ <img src="https://user-images.githubusercontent.com/9203826/154288895-670f5c23-81a1-4307-a080-1af83f7f8356.svg" align="center" alt="Ledger" />
+ <h2 align="center">Ledger Live Wagmi Connector</h2>
+ <p align="center"><a href="https://github.com/tmm/wagmi">Wagmi</a> Connector for the Ledger Live Ethereum Dapp Browser</p>
+</p>
+  <p align="center">
+    <a href="https://www.npmjs.com/package/@ledgerhq/ledger-live-wagmi-connector?activeTab=versions">
+      <img src="https://img.shields.io/npm/v/@ledgerhq/ledger-live-wagmi-connector.svg?style=flat-square" />
+    </a>
+    <a href="https://opensource.org/licenses/Apache-2.0">
+      <img alt="License" src="https://img.shields.io/badge/License-Apache%202.0-blue.svg" />
+    </a>
+    <a href="https://github.com/LedgerHQ/ledger-live-wagmi-connector/actions">
+      <img alt="Tests Passing" src="https://github.com/LedgerHQ/ledger-live-wagmi-connector/workflows/CI/badge.svg" />
+    </a>
+    <a href="https://codecov.io/gh/LedgerHQ/ledger-live-wagmi-connector">
+      <img src="https://codecov.io/gh/LedgerHQ/ledger-live-wagmi-connector/branch/main/graph/badge.svg" />
+    </a>
+    <a href="https://github.com/LedgerHQ/ledger-live-wagmi-connector/issues">
+      <img alt="Issues" src="https://img.shields.io/github/issues/LedgerHQ/ledger-live-wagmi-connector?color=0088ff" />
+    </a>
+    <a href="https://github.com/LedgerHQ/ledger-live-wagmi-connector/pulls">
+      <img alt="GitHub pull requests" src="https://img.shields.io/github/issues-pr/LedgerHQ/ledger-live-wagmi-connector?color=0088ff" />
+    </a>
+    <a href="https://discord.gg/y6nZhxv2bC">
+      <img alt="Discord" src="https://img.shields.io/discord/885256081289379850?color=1C1CE1&label=Ledger%20%7C%20Discord%20%F0%9F%91%8B%20&style=flat-square" />
+    </a>
+   
+   
+  </p>
 
-Congrats! You just saved yourself hours of work by bootstrapping this project with TSDX. Let’s get you oriented with what’s here and how to use it.
+  <p align="center">
+    <a href="https://developers.ledger.com/docs/live-app/start-here/">Full documentation</a>
+    ·
+    <a href="https://github.com/LedgerHQ/ledger-live-wagmi-connector/issues/new/choose">Report Bug</a>
+    ·
+    <a href="https://github.com/LedgerHQ/ledger-live-wagmi-connector/issues/new/choose">Request Feature</a>
+  </p>
+</p>
 
-> This TSDX setup is meant for developing libraries (not apps!) that can be published to NPM. If you’re looking to build a Node app, you could use `ts-node-dev`, plain `ts-node`, or simple `tsc`.
+# Contributing
 
-> If you’re new to TypeScript, checkout [this handy cheatsheet](https://devhints.io/typescript)
+**You need to have a recent [Node.js](https://nodejs.org/) and
+[Yarn 1 (Classic)](https://classic.yarnpkg.com/lang/en/) installed.**
 
-## Commands
-
-TSDX scaffolds your new library inside `/src`.
-
-To run TSDX, use:
+### Install dependencies
 
 ```bash
-npm start # or yarn start
+yarn
 ```
 
-This builds to `/dist` and runs the project in watch mode so any edits you save inside `src` causes a rebuild to `/dist`.
+### Build
 
-To do a one-off build, use `npm run build` or `yarn build`.
+Build the Connector
 
-To run tests, use `npm test` or `yarn test`.
-
-## Configuration
-
-Code quality is set up for you with `prettier`, `husky`, and `lint-staged`. Adjust the respective fields in `package.json` accordingly.
-
-### Jest
-
-Jest tests are set up to run with `npm test` or `yarn test`.
-
-### Bundle Analysis
-
-[`size-limit`](https://github.com/ai/size-limit) is set up to calculate the real cost of your library with `npm run size` and visualize the bundle with `npm run analyze`.
-
-#### Setup Files
-
-This is the folder structure we set up for you:
-
-```txt
-/src
-  index.tsx       # EDIT THIS
-/test
-  blah.test.tsx   # EDIT THIS
-.gitignore
-package.json
-README.md         # EDIT THIS
-tsconfig.json
+```bash
+yarn build
 ```
 
-### Rollup
+### Lint
 
-TSDX uses [Rollup](https://rollupjs.org) as a bundler and generates multiple rollup configs for various module formats and build settings. See [Optimizations](#optimizations) for details.
+Check code quality with
 
-### TypeScript
-
-`tsconfig.json` is set up to interpret `dom` and `esnext` types, as well as `react` for `jsx`. Adjust according to your needs.
-
-## Continuous Integration
-
-### GitHub Actions
-
-Two actions are added by default:
-
-- `main` which installs deps w/ cache, lints, tests, and builds on all pushes against a Node and OS matrix
-- `size` which comments cost comparison of your library on every pull request using [`size-limit`](https://github.com/ai/size-limit)
-
-## Optimizations
-
-Please see the main `tsdx` [optimizations docs](https://github.com/palmerhq/tsdx#optimizations). In particular, know that you can take advantage of development-only optimizations:
-
-```js
-// ./types/index.d.ts
-declare var __DEV__: boolean;
-
-// inside your code...
-if (__DEV__) {
-  console.log('foo');
-}
+```bash
+yarn lint
 ```
 
-You can also choose to install and use [invariant](https://github.com/palmerhq/tsdx#invariant) and [warning](https://github.com/palmerhq/tsdx#warning) functions.
+# Documentation
 
-## Module Formats
-
-CJS, ESModules, and UMD module formats are supported.
-
-The appropriate paths are configured in `package.json` and `dist/index.js` accordingly. Please report if any issues are found.
-
-## Named Exports
-
-Per Palmer Group guidelines, [always use named exports.](https://github.com/palmerhq/typescript#exports) Code split inside your React app instead of your React library.
-
-## Including Styles
-
-There are many ways to ship styles, including with CSS-in-JS. TSDX has no opinion on this, configure how you like.
-
-For vanilla CSS, you can include it at the root directory and add it to the `files` section in your `package.json`, so that it can be imported separately by your users and run through their bundler's loader.
-
-## Publishing to NPM
-
-We recommend using [np](https://github.com/sindresorhus/np).
+Have a look at [the wagmi repo](https://github.com/tmm/wagmi) and [the wagmi doc](https://wagmi.sh/) on how to use this connector with wagmi.
