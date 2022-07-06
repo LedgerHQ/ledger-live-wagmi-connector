@@ -4,7 +4,7 @@
  <p align="center"><a href="https://github.com/tmm/wagmi">Wagmi</a> Connector for the Ledger Live Ethereum Dapp Browser</p>
 </p>
   <p align="center">
-    <a href="https://www.npmjs.com/package/@ledgerhq/ledger-live-wagmi-connector?activeTab=versions">
+    <a href="https://www.npmjs.com/package/@ledgerhq/ledger-live-wagmi-connector">
       <img src="https://img.shields.io/npm/v/@ledgerhq/ledger-live-wagmi-connector.svg?style=flat-square" />
     </a>
     <a href="https://opensource.org/licenses/MIT">
