@@ -7,14 +7,11 @@
     <a href="https://www.npmjs.com/package/@ledgerhq/ledger-live-wagmi-connector?activeTab=versions">
       <img src="https://img.shields.io/npm/v/@ledgerhq/ledger-live-wagmi-connector.svg?style=flat-square" />
     </a>
-    <a href="https://opensource.org/licenses/Apache-2.0">
-      <img alt="License" src="https://img.shields.io/badge/License-Apache%202.0-blue.svg" />
+    <a href="https://opensource.org/licenses/MIT">
+      <img alt="License" src="https://img.shields.io/badge/License-MIT-blue.svg" />
     </a>
     <a href="https://github.com/LedgerHQ/ledger-live-wagmi-connector/actions">
       <img alt="Tests Passing" src="https://github.com/LedgerHQ/ledger-live-wagmi-connector/workflows/CI/badge.svg" />
-    </a>
-    <a href="https://codecov.io/gh/LedgerHQ/ledger-live-wagmi-connector">
-      <img src="https://codecov.io/gh/LedgerHQ/ledger-live-wagmi-connector/branch/main/graph/badge.svg" />
     </a>
     <a href="https://github.com/LedgerHQ/ledger-live-wagmi-connector/issues">
       <img alt="Issues" src="https://img.shields.io/github/issues/LedgerHQ/ledger-live-wagmi-connector?color=0088ff" />
@@ -25,18 +22,48 @@
     <a href="https://discord.gg/y6nZhxv2bC">
       <img alt="Discord" src="https://img.shields.io/discord/885256081289379850?color=1C1CE1&label=Ledger%20%7C%20Discord%20%F0%9F%91%8B%20&style=flat-square" />
     </a>
-   
-   
   </p>
 
   <p align="center">
-    <a href="https://developers.ledger.com/docs/live-app/start-here/">Full documentation</a>
+    <a href="https://developers.ledger.com/docs/live-app/start-here/">Ledger Developer Portal</a>
     ·
     <a href="https://github.com/LedgerHQ/ledger-live-wagmi-connector/issues/new/choose">Report Bug</a>
     ·
     <a href="https://github.com/LedgerHQ/ledger-live-wagmi-connector/issues/new/choose">Request Feature</a>
   </p>
 </p>
+
+# About
+
+`@ledgerhq/ledger-live-wagmi-connector` is a connector for the popular [wagmi](https://github.com/tmm/wagmi) library built on top of the [@ledgerhq/iframe-provider
+](https://github.com/ledgerhq/iframe-provider).
+
+It can be used to initialize a [wagmi client](https://wagmi.sh/docs/client) that will seemlessly manage the interaction of your DApp with the Ledger Live wallet.
+
+## How to use
+
+Here is an example of a wagmi client using both the `IFrameEthereumConnector` and the default `InjectedConnector` to be used, respectively, within Ledger Live [DApp browser](https://github.com/LedgerHQ/eth-dapp-browser) and on a regular browser with an injected provider like Metamask for example.
+
+```js
+import { IFrameEthereumConnector } from '@ledgerhq/ledger-live-wagmi-connector';
+import { chain, configureChains, createClient } from 'wagmi';
+import { InjectedConnector } from 'wagmi/connectors/injected';
+import { publicProvider } from 'wagmi/providers/public';
+
+const { chains, provider } = configureChains(
+  [chain.mainnet, chain.polygon],
+  [publicProvider()]
+);
+
+const wagmiClient = createClient({
+  autoConnect: true,
+  connectors: [
+    new IFrameEthereumConnector({ chains, options: {} }),
+    new InjectedConnector({ chains }),
+  ],
+  provider,
+});
+```
 
 # Contributing
 
@@ -67,4 +94,4 @@ yarn lint
 
 # Documentation
 
-Have a look at [the wagmi repo](https://github.com/tmm/wagmi) and [the wagmi doc](https://wagmi.sh/) on how to use this connector with wagmi.
+Have a look at [the wagmi repo](https://github.com/tmm/wagmi) and [the wagmi doc](https://wagmi.sh/) to learn more on connectors and wagmi.
