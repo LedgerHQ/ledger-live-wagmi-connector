@@ -12,7 +12,7 @@ import {
   UserRejectedRequestError,
 } from 'wagmi';
 
-import { normalizeChainId } from 'wagmi-core';
+import { normalizeChainId, ProviderRpcError } from '@wagmi/core';
 
 type IFrameEthereumProviderOptions = ConstructorParameters<
   typeof IFrameEthereumProvider

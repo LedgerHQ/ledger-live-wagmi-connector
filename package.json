@@ -37,11 +37,11 @@
   "size-limit": [
     {
       "path": "dist/ledger-live-wagmi-connector.cjs.production.min.js",
-      "limit": "10 KB"
+      "limit": "350 KB"
     },
     {
       "path": "dist/ledger-live-wagmi-connector.esm.js",
-      "limit": "10 KB"
+      "limit": "350 KB"
     }
   ],
   "devDependencies": {
@@ -61,7 +61,6 @@
   "dependencies": {
     "@ledgerhq/iframe-provider": "^0.4.2",
     "ethers": "^5.6.9",
-    "wagmi": "^0.5.5",
-    "wagmi-core": "^0.1.22"
+    "wagmi": "^0.5.5"
   }
 }
