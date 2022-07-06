@@ -35,12 +35,14 @@
 
 # About
 
-`@ledgerhq/ledger-live-wagmi-connector` is a [wagmi](https://github.com/tmm/wagmi) connector built on top of the [@ledgerhq/iframe-provider
-](https://github.com/ledgerhq/iframe-provider). It can be used to initialize a wagmi client, managing the interaction of your DApp with the Ledger Live wallet.
+`@ledgerhq/ledger-live-wagmi-connector` is a connector for the popular [wagmi](https://github.com/tmm/wagmi) library built on top of the [@ledgerhq/iframe-provider
+](https://github.com/ledgerhq/iframe-provider).
+
+It can be used to initialize a [wagmi client](https://wagmi.sh/docs/client) that will seemlessly manage the interaction of your DApp with the Ledger Live wallet.
 
 ## How to use
 
-Here is an example of a wagmi client using both the `IFrameEthereumConnector` and the default `InjectedConnector` to be used within Ledger Live [DApp browser](https://github.com/LedgerHQ/eth-dapp-browser) and on a regular browser with an injected provider like Metamask for example.
+Here is an example of a wagmi client using both the `IFrameEthereumConnector` and the default `InjectedConnector` to be used, respectively, within Ledger Live [DApp browser](https://github.com/LedgerHQ/eth-dapp-browser) and on a regular browser with an injected provider like Metamask for example.
 
 ```js
 import { IFrameEthereumConnector } from '@ledgerhq/ledger-live-wagmi-connector';
