@@ -38,7 +38,9 @@
 `@ledgerhq/ledger-live-wagmi-connector` is a connector for the popular [wagmi](https://github.com/tmm/wagmi) library built on top of the [@ledgerhq/iframe-provider
 ](https://github.com/ledgerhq/iframe-provider).
 
-It can be used to initialize a [wagmi client](https://wagmi.sh/docs/client) that will seemlessly manage the interaction of your DApp with the Ledger Live wallet.
+It can be used to initialize a [wagmi client](https://wagmi.sh/docs/client) that will seemlessly manage the interaction of your DApp with the Ledger Live wallet through the [ethereum dapp browser](https://github.com/LedgerHQ/eth-dapp-browser).
+
+For more details on how to develop, test and integrate your DApp in the Ledger Live context, head over to our [developer portal](https://developers.ledger.com/docs/dapp/process/).
 
 ## How to use
 
