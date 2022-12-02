@@ -47,15 +47,12 @@ For more details on how to develop, test and integrate your DApp in the Ledger L
 Here is an example of a wagmi client using both the `IFrameEthereumConnector` and the default `InjectedConnector` to be used, respectively, within Ledger Live [DApp browser](https://github.com/LedgerHQ/eth-dapp-browser) and on a regular browser with an injected provider like Metamask for example.
 
 ```js
-import { IFrameEthereumConnector } from '@ledgerhq/ledger-live-wagmi-connector';
-import { chain, configureChains, createClient } from 'wagmi';
-import { InjectedConnector } from 'wagmi/connectors/injected';
-import { publicProvider } from 'wagmi/providers/public';
+import { IFrameEthereumConnector } from "@ledgerhq/ledger-live-wagmi-connector";
+import { defaultChains, configureChains, createClient } from "wagmi";
+import { InjectedConnector } from "wagmi/connectors/injected";
+import { publicProvider } from "wagmi/providers/public";
 
-const { chains, provider } = configureChains(
-  [chain.mainnet, chain.polygon],
-  [publicProvider()]
-);
+const { chains, provider } = configureChains(defaultChains, [publicProvider()]);
 
 const wagmiClient = createClient({
   autoConnect: true,
@@ -70,12 +67,12 @@ const wagmiClient = createClient({
 # Contributing
 
 **You need to have a recent [Node.js](https://nodejs.org/) and
-[Yarn 1 (Classic)](https://classic.yarnpkg.com/lang/en/) installed.**
+[pnpm](https://pnpm.io/) installed.**
 
 ### Install dependencies
 
 ```bash
-yarn
+pnpm i
 ```
 
 ### Build
@@ -83,7 +80,7 @@ yarn
 Build the Connector
 
 ```bash
-yarn build
+pnpm build
 ```
 
 ### Lint
@@ -91,7 +88,15 @@ yarn build
 Check code quality with
 
 ```bash
-yarn lint
+pnpm lint
+```
+
+### Format
+
+Check code formatting with
+
+```bash
+pnpm format:check
 ```
 
 # Documentation
