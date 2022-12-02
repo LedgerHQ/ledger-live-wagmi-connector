@@ -2,10 +2,37 @@ name: Pull Request Checks
 on: [pull_request]
 
 jobs:
-  checks:
-    name: Build, lint, and test on Node ${{ matrix.node }} and ${{ matrix.os }}
+  format-lint:
+    name: Check formatting and linting
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
 
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: latest
+
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          cache: pnpm
+
+      - name: Install Dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: format check
+        run: pnpm format:check
+
+      - name: lint
+        run: pnpm lint
+
+  build-test:
+    name: Build, and test on Node ${{ matrix.node }} and ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
+    continue-on-error: true
     strategy:
       matrix:
         node: [14, 16]
@@ -29,14 +56,8 @@ jobs:
       - name: Install Dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: format check
-        run: pnpm format:check
-
       - name: build
         run: pnpm build
-
-      - name: lint
-        run: pnpm lint
 
       - name: test
         run: pnpm test
