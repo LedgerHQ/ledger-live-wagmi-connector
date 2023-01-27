@@ -1,7 +1,7 @@
 {
   "name": "@ledgerhq/ledger-live-wagmi-connector",
   "author": "Alexandre Chabrolin",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "license": "MIT",
   "main": "lib/index.js",
   "type": "module",
