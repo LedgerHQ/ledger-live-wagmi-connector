@@ -10,9 +10,10 @@ import {
   RpcError,
   SwitchChainError,
   UserRejectedRequestError,
-} from "wagmi";
-
-import { normalizeChainId, ProviderRpcError, Chain } from "@wagmi/core";
+  normalizeChainId,
+  ProviderRpcError,
+  Chain,
+} from "@wagmi/core";
 
 type IFrameEthereumProviderOptions = ConstructorParameters<
   typeof IFrameEthereumProvider
