@@ -126,7 +126,8 @@ export class IFrameEthereumConnector extends Connector<
           id: chainId,
           name: `Chain ${id}`,
           network: `${id}`,
-          rpcUrls: { default: "" },
+          nativeCurrency: { decimals: 18, name: "Ether", symbol: "ETH" },
+          rpcUrls: { default: { http: [""] }, public: { http: [""] } },
         }
       );
     } catch (error) {
