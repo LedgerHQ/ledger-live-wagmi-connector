@@ -1,5 +1,11 @@
 # @ledgerhq/ledger-live-wagmi-connector
 
+## 0.3.0
+
+### Minor Changes
+
+- [#16](https://github.com/LedgerHQ/ledger-live-wagmi-connector/pull/16) [`59d8ea6`](https://github.com/LedgerHQ/ledger-live-wagmi-connector/commit/59d8ea6888f2101586eb624599cc10d4ca94ce68) Thanks [@chabroA](https://github.com/chabroA)! - Update wagmi deps to new breaking version ^0.10.X
+
 ## 0.2.1
 
 ### Patch Changes
