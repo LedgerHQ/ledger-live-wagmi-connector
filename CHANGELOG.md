@@ -1,5 +1,11 @@
 # @ledgerhq/ledger-live-wagmi-connector
 
+## 0.4.0
+
+### Minor Changes
+
+- [#17](https://github.com/LedgerHQ/ledger-live-wagmi-connector/pull/17) [`5c5b614`](https://github.com/LedgerHQ/ledger-live-wagmi-connector/commit/5c5b6142d1dd8ac3e1a767f443f192678bf8bb47) Thanks [@chabroA](https://github.com/chabroA)! - Remove wagmi dep in favor of only wagmi/core
+
 ## 0.3.0
 
 ### Minor Changes
