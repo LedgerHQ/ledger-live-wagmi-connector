@@ -1,6 +1,7 @@
 import { IFrameEthereumProvider } from "@ledgerhq/iframe-provider";
 import { providers } from "ethers";
 import { getAddress, hexValue } from "ethers/lib/utils";
+
 import {
   AddChainError,
   ChainNotConfiguredError,
@@ -10,9 +11,10 @@ import {
   RpcError,
   SwitchChainError,
   UserRejectedRequestError,
-} from "wagmi";
-
-import { normalizeChainId, ProviderRpcError, Chain } from "@wagmi/core";
+  normalizeChainId,
+  ProviderRpcError,
+  Chain,
+} from "@wagmi/core";
 
 type IFrameEthereumProviderOptions = ConstructorParameters<
   typeof IFrameEthereumProvider
@@ -126,7 +128,8 @@ export class IFrameEthereumConnector extends Connector<
           id: chainId,
           name: `Chain ${id}`,
           network: `${id}`,
-          rpcUrls: { default: "" },
+          nativeCurrency: { decimals: 18, name: "Ether", symbol: "ETH" },
+          rpcUrls: { default: { http: [""] } },
         }
       );
     } catch (error) {
@@ -148,7 +151,7 @@ export class IFrameEthereumConnector extends Connector<
               chainId: id,
               chainName: chain.name,
               nativeCurrency: chain.nativeCurrency,
-              rpcUrls: [chain.rpcUrls.public ?? chain.rpcUrls.default],
+              rpcUrls: [chain.rpcUrls.default],
               blockExplorerUrls: this.getBlockExplorerUrls(chain),
             },
           ]);

@@ -67,9 +67,8 @@
   },
   "dependencies": {
     "@ledgerhq/iframe-provider": "^0.4.3",
-    "@wagmi/core": "^0.7.9",
-    "ethers": "^5.7.2",
-    "wagmi": "^0.8.10"
+    "@wagmi/core": "0.8.6",
+    "ethers": "^5.7.2"
   },
   "packageManager": "pnpm@7.17.1"
 }

@@ -1,11 +1,11 @@
 import { describe, expect, it } from "vitest";
-import { defaultChains } from "wagmi";
+import { testChains } from "@wagmi/core/internal/test";
 import { IFrameEthereumConnector } from "../src";
 
 describe("IFrameEthereumConnector", () => {
   it("inits", () => {
     const connector = new IFrameEthereumConnector({
-      chains: defaultChains,
+      chains: testChains,
       options: {},
     });
     expect(connector.name).toEqual("Ledger Live");
