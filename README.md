@@ -33,6 +33,10 @@
   </p>
 </p>
 
+# ⛔️ DEPRECATED
+
+This repository is now deprecated.
+
 # About
 
 `@ledgerhq/ledger-live-wagmi-connector` is a connector for the popular [wagmi](https://github.com/tmm/wagmi) library built on top of the [@ledgerhq/iframe-provider
